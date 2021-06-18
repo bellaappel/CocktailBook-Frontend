@@ -11,7 +11,7 @@ export default class CocktailListContainer extends Component {
     }
 
     componentDidMount(){
-            fetch('www.thecocktaildb.com/api/json/v1/1/randomselection.php')
+            fetch('www.thecocktaildb.com/api/json/v2/9973533/randomselection.php')
             .then(response => response.json())
             .then(data => this.setState({
             gifs: [data.data[0], data.data[1], data.data[2]]
