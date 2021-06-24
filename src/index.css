@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#cocktail-header {
+  display: flex;
+  justify-content: center;
+  background: #515DA2;
+  opacity: .8;
+  height: 7rem;
+  padding: 1rem;
+}
+
