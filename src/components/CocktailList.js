@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react';
+import Cocktail from '../Cocktail.js';
 
-export class CocktailList extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
-}
+const CocktailList = ({cocktails}) => (
+    <div className="cocktail-list">
+        {cocktails.map(cocktail => < Cocktail name={cocktail.name} photo={cocktail.photo} />)}
+    </div>
 
-export default CocktailList
+)
+
+export default CocktailList;

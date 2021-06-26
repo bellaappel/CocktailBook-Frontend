@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import CocktailList from '../components/CocktailList'
 
 export default class CocktailListContainer extends Component {
-
     constructor() {
         super()
         this.state = {
@@ -11,22 +10,20 @@ export default class CocktailListContainer extends Component {
     }
 
     componentDidMount(){
-            fetch('www.thecocktaildb.com/api/json/v2/9973533/randomselection.php')
-            .then(response => response.json())
-            .then(data => this.setState({
-            cocktails: [data.data[0], data.data[1], data.data[2]]
-            }));
-        }
+        fetch("http://localhost:3000/cocktails")
+        .then(response => response.json())
+        .then(cocktailData => this.setState({cocktails: cocktailData.cocktails}))
+    }
 
 
-
-    render() {
-        return (
+    render(){
+        return(
             <div>
-            <CocktailList initialCocktails={this.state.cocktails} />
+                <CocktailList cocktails={this.state.cocktails}/>
             </div>
         )
     }
+
 }
 
 
